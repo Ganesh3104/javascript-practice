@@ -1,3 +1,13 @@
 <script>
-   let 
+   let str = "hello world for all new coderes";
+   let res = "";
+
+   for(let i = 0; i < str.length; i++){
+      if(i === 0 || str[i - 1] === " "){
+         res += str[i].toUpperCase();
+      }else{
+         res += str[i];
+      }
+   }
+   console.log(res);
 </script>
