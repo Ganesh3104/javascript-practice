@@ -1,0 +1,21 @@
+<script>
+
+   function missingnum(arr){
+    let missing = [];
+
+    for(let i = 0; i < arr.length; i++){
+        let diff = arr[i + 1] - arr[i];
+
+        if(diff > 1){
+            for(let j = 1; j < diff; j++){
+                missing[missing.length] = arr[i] + j;
+            }
+        }
+    }
+    return missing;
+}
+
+let arr = [1, 2, 7];
+console.log(missingnum(arr));
+
+</script>

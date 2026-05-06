@@ -1,0 +1,22 @@
+<script>
+   function freq(arr){
+  let f = {};
+  for(let i = 0; i < arr.length; i++){
+    let x = arr[i];
+
+    if(x in f){
+      f[x] = f[x] + 1;
+    } else {
+      f[x] = 1;
+    }
+  }
+
+  for(let k in f){
+    console.log(k, f[k]);
+  }
+}
+
+freq([1,2,1,2,3]);
+
+
+</script>

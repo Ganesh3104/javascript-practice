@@ -1,0 +1,28 @@
+<h2>Login</h2>
+<input type="email" id="lemail" placeholder="Email"><br><br>
+<input type="password" id="lpass" placeholder="Password"><br><br>
+<button onclick="login()">Login</button>
+<p id="lmsg"></p>
+
+<script>
+function login(){
+    let email = lemail.value;
+    let pass = lpass.value;
+    let msg = document.getElementById("lmsg");
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    let validUser = users.find(u => u.email === email && u.pass === pass);
+
+    if(validUser){
+        localStorage.setItem("loggedUser", JSON.stringify(validUser));
+        msg.innerHTML="Login Successful";
+        msg.style.color="green";
+        // you can redirect here
+    }
+    else{
+        msg.innerHTML="Invalid Email or Password";
+        msg.style.color="red";
+    }
+}
+</script>

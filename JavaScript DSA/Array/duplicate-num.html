@@ -1,0 +1,17 @@
+<script>
+function duplicates(arr){
+    let dupli = [];
+
+    for(let i = 0; i < arr.length; i++){
+        for(let j = i + 1; j < arr.length; j++){
+            if(arr[i] === arr[j] && !dupli.includes(arr[i])){
+                dupli[dupli.length] = arr[i]; // added without push()
+            }
+        }
+    }
+    return dupli;
+}
+
+let arr = [1, 2, 1, 2];
+console.log(duplicates(arr));
+</script>

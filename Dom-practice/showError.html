@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validation</title>
+
+<style>
+.error { color: red; font-size: 14px; }
+.success { color: green; font-size: 14px; }
+</style>
+
+<script>
+function validate(){
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    let nameErr = document.getElementById("nameErr");
+    let emailErr = document.getElementById("emailErr");
+
+    
+
+    if(name == ""){
+        nameErr.innerHTML = "Name is required";
+        return false;
+    } if(email == ""){
+        emailErr.innerHTML = "Email is required";
+        return  false;
+    }
+
+    alert("submit successfully");
+
+
+}
+</script>
+</head>
+
+<body>
+
+<form onsubmit="return validate()">
+    Name: <input type="text" id="name">
+    <span id="nameErr" class="error"></span><br><br>
+
+    Email: <input type="text" id="email">
+    <span id="emailErr" class="error"></span><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

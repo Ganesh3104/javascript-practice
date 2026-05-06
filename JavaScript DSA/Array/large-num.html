@@ -1,0 +1,15 @@
+<script>
+    function largenum(arr){
+        let large = arr[0];
+
+        for(let i = 0; i < arr.length; i++){
+            if(arr[i] > large){
+                large = arr[i];
+            }
+        }
+        return large;
+    }
+
+    let num = [10, 20, 40, 30];
+    console.log(largenum(num));
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // onkeyup
+       function verify(){
+         let username = document.getElementById("txtName").value;
+        let lblName = document.getElementById("lblName");
+          
+        if(username === "john"){
+            lblName.innerHTML ="username Taken try another".fontcolor('red').italics();
+        }else{
+            lblName.innerHTML = "username Available".fontcolor('green').italics();
+        }
+       }
+    </script>
+</head>
+<body>
+    <dt>Username</dt>
+    <dd><input type="text" id="txtName" onkeyup="verify()"></dd>
+    <dd id="lblName"></dd>
+</body>
+</html>

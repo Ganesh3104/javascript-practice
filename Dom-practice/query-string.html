@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       function bodyload(){
+            collection = new URLSearchParams(window.location.search);
+            //collection = new URLSearchParams(window.location.search); both same window is best or profesional  
+
+            document.querySelector("p").innerHTML = "Search Category : " + collection.get('category') + "<br>Searching For :" + collection.get('product');
+       }
+
+       //add this in url   input.html?category=Electronics&product=Mobiles
+    </script>
+</head>
+<body onload="bodyload()">
+    <p></p>
+</body>
+</html>
+

@@ -1,0 +1,50 @@
+<script>
+    function f1(){
+        let choice = prompt("Enter a string");
+
+        switch(choice){
+            case "red":
+            case "green":
+            case "yellow":
+                document.write(`You seleted ${choice} color`);
+            break;
+            
+            case "mango":
+            case "Apple": 
+               document.write(`You Seleted ${choice} fruit`);
+            break;
+            default: 
+                document.write(`Please provide color or fruit from given list`);
+
+
+        }
+    } 
+    f1();
+</script>
+
+
+<script>
+    function f1(){
+    var n = parseInt(prompt("Enter Number"));
+    switch(n)
+    {
+       
+        case 1:
+        document.write("One");
+        break;
+        case 2:
+        document.write("Two<br>");
+        return;
+        case 3:
+        document.write("Three");
+        break;
+        case 4:
+        document.write("Four");
+        break;
+        default:
+        document.write("Please enter value from 1 to 4 only");
+        break;
+    }
+    }
+    f1();
+</script>

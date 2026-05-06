@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Authentication UI</title>
+
+<style>
+body{
+    font-family: Arial;
+    background: #f2f2f2;
+    text-align: center;
+}
+.box{
+    background: white;
+    width: 300px;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+}
+input{
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+}
+button{
+    padding: 10px;
+    width: 100%;
+    background: #4CAF50;
+    color: white;
+    border: none;
+}
+p{
+    font-size: 14px;
+}
+a{
+    cursor: pointer;
+    color: blue;
+}
+</style>
+
+<script>
+function showLogin(){
+    document.getElementById("login").style.display="block";
+    document.getElementById("register").style.display="none";
+}
+
+function showRegister(){
+    document.getElementById("login").style.display="none";
+    document.getElementById("register").style.display="block";
+}
+
+function togglePass(id){
+    let x = document.getElementById(id);
+    x.type = (x.type === "password") ? "text" : "password";
+}
+
+function register(){
+    let n = document.getElementById("rname").value;
+    let e = document.getElementById("remail").value;
+    let p = document.getElementById("rpass").value;
+    let cp = document.getElementById("rcpass").value;
+    let msg = document.getElementById("rmsg");
+
+    let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(n==""||e==""||p==""||cp==""){
+        msg.innerHTML="All fields required";
+        msg.style.color="red";
+    }
+    else if(!pattern.test(e)){
+        msg.innerHTML="Invalid Email";
+        msg.style.color="red";
+    }
+    else if(p.length<6){
+        msg.innerHTML="Password must be at least 6 characters";
+        msg.style.color="red";
+    }
+    else if(p!=cp){
+        msg.innerHTML="Passwords do not match";
+        msg.style.color="red";
+    }
+    else{
+        msg.innerHTML="Registration Successful";
+        msg.style.color="green";
+    }
+}
+
+function login(){
+    let e = document.getElementById("lemail").value;
+    let p = document.getElementById("lpass").value;
+    let msg = document.getElementById("lmsg");
+
+    if(e==""||p==""){
+        msg.innerHTML="All fields required";
+        msg.style.color="red";
+    }
+    else{
+        msg.innerHTML="Login Successful";
+        msg.style.color="green";
+    }
+}
+</script>
+</head>
+
+<body>
+
+<div class="box" id="login">
+<h2>Login</h2>
+<input type="email" id="lemail" placeholder="Email">
+<input type="password" id="lpass" placeholder="Password">
+<input type="checkbox" onclick="togglePass('lpass')"> Show Password
+<button onclick="login()">Login</button>
+<p id="lmsg"></p>
+<p>New user? <a onclick="showRegister()">Register</a></p>
+</div>
+
+<div class="box" id="register" style="display:none">
+<h2>Register</h2>
+<input type="text" id="rname" placeholder="Name">
+<input type="email" id="remail" placeholder="Email">
+<input type="password" id="rpass" placeholder="Password">
+<input type="password" id="rcpass" placeholder="Confirm Password">
+<input type="checkbox" onclick="togglePass('rpass')"> Show Password
+<button onclick="register()">Register</button>
+<p id="rmsg"></p>
+<p>Already have an account? <a onclick="showLogin()">Login</a></p>
+</div>
+
+</body>
+</html>

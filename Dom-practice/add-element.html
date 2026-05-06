@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add(){
+            let p = document.createElement("p");
+            p.innerHTML = "New message Added";
+            document.getElementById("box").appendChild(p);
+            p.style.fontSize = "30px";
+
+        }
+    </script>
+</head>
+<body>
+    <button onclick="add()">Add Text</button>
+    <div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       function show(){
+         let num = 100000;
+         
+        // let local = num.toLocaleString('en-in');
+          let local = num.toLocaleString('en-us', {notation:"compact"});
+          document.querySelector("#out").innerHTML = "compact:" + local;
+          
+          let speed = 110;
+          let km = speed.toLocaleString('en-in', {style:"unit", unit: "kilometer-per-hour"});
+          document.querySelector("#dis").innerHTML = "unit:" + km;
+       }
+
+    </script>
+</head>
+<body>
+    <h3 id="out"></h3>
+    <h3 id="dis"></h3>
+    <button onclick="show()">show</button>
+</body>
+</html>

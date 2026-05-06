@@ -1,0 +1,18 @@
+<script>
+    function intersection(a, b) {
+    let r = [];
+
+    for (let i = 0; i < a.length; i++) {
+        for (let j = 0; j < b.length; j++) {
+            if (a[i] == b[j]) {
+                r[r.length] = a[i]; // add manually
+                break; // stop inner loop
+            }
+        }
+    }
+    return r;
+}
+
+console.log(intersection([1,2,3], [2,3,4]));
+
+</script>

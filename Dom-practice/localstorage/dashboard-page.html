@@ -1,0 +1,19 @@
+<h2>Welcome</h2>
+<p id="user"></p>
+<button onclick="logout()">Logout</button>
+
+<script>
+let user = JSON.parse(localStorage.getItem("loggedUser"));
+
+if(!user){
+    window.location="login.html";   // not logged in
+}
+else{
+    document.getElementById("user").innerHTML = "Hello " + user.name;
+}
+
+function logout(){
+    localStorage.removeItem("loggedUser");
+    window.location="login.html";
+}
+</script>

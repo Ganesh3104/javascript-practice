@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function verify(){
+            let Email = document.getElementById("txtEmail").value;
+            let lblErr = document.getElementById("lblErr");
+
+            if(Email.indexOf("@") == -1){
+                lblErr.innerHTML = "Invalid Email please include @".fontcolor('red');
+            }else{
+                lblErr.innerHTML = "";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <dt>form</dt>
+    <dd><input type="text" id="txtEmail" onblur="verify()"></dd>
+    <dd id="lblErr"></dd>
+</body>
+</html>

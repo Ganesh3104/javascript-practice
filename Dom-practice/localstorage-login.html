@@ -1,0 +1,25 @@
+<h2>Login</h2>
+<input type="email" id="lemail" placeholder="Email"><br><br>
+<input type="password" id="lpass" placeholder="Password"><br><br>
+<button onclick="login()">Login</button>
+<p id="lmsg"></p>
+
+<script>
+function login(){
+    let email = document.getElementById("lemail").value;
+    let pass = document.getElementById("lpass").value;
+    let msg = document.getElementById("lmsg");
+
+    let storedEmail = localStorage.getItem("email");
+    let storedPass = localStorage.getItem("password");
+
+    if(email == storedEmail && pass == storedPass){
+        msg.innerHTML = "Login Successful";
+        msg.style.color="green";
+    }
+    else{
+        msg.innerHTML = "Invalid Login";
+        msg.style.color="red";
+    }
+}
+</script>

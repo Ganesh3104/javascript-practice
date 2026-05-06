@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            color: red;
+            font-size: 30px;
+        }
+    </style>
+    <script>
+        function add(){
+            document.getElementById("text").classList.add("box");
+        }
+
+        function remove(){
+            document.getElementById("text").classList.remove("box");
+        }
+    </script>
+</head>
+<body>
+    <p id="text">JavaScript DOM</p>
+    <button onclick="add()" style="background-color: aqua;">Add</button>
+    <button onclick="remove()" style="background-color: aqua;">remove</button>
+</body>
+</html>

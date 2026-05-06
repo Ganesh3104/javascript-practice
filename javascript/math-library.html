@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function GenerateCode(){
+            var code = Math.round(Math.random()*10) + "&nbsp;" + Math.round(Math.random()*10) + "&nbsp;" + Math.round(Math.random()*10) + "&nbsp;" + Math.round(Math.random()*10) + "&nbsp;" + Math.round(Math.random()*10) + "&nbsp;" + Math.round(Math.random()*10);
+            document.getElementById("lblCode").innerHTML = code;
+        }
+        function RefreshClick(){
+            GenerateCode();
+        }
+    </script>
+</head>
+<body onload="GenerateCode()">
+    <dl>
+        <h3>User Login</h3>
+        <dt>User Name</dt>
+        <dd><input type="text"></dd>
+        <dt>Password</dt>
+        <dd><input type="password"></dd>
+        <dt>Verify Code <button onclick="RefreshClick()" class="bi bi-arrow-clockwise"></button> </dt>
+        <dd id="lblCode"></dd>
+    </dl>
+    <button>Login</button>
+</body>
+</html>

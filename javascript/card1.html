@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function VerifyCard(){
+            var card = document.getElementById("txtCard").value;
+            var imgCard = document.getElementById("imgCard");
+
+            if(card.startsWith("4455")){
+                imgCard.src = "./public/visa.jpeg";
+            }else{
+                imgCard.src = "./public/master.png";
+            }
+        }
+
+        function VerifySkype(){
+            var skype = document.getElementById("txtSkype").value;
+            var lblSkype = document.getElementById("lblSkype");
+
+            if(skype.endsWith("outlook.com")){
+                lblSkype.innerHTML = "";
+            }else{
+                lblSkype.innerHTML = "Invalid Skype profile".fontcolor('red');
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <dl class=" mt-4 w-25">
+        <dt>Your Card Number</dt>
+        <dd class="input-group"><input type="text" maxlength="16" onblur="VerifyCard()" class="form-control" id="txtCard"><img id="imgCard" width="80" height="40" class="input-group-text"></dd>
+        <dt class="bi bi-skype">Your Skype ID</dt>
+        <dd>
+            <input type="text" onblur="VerifySkype()" id="txtSkype" class="form-control">
+        </dd>
+        <dd id="lblSkype"></dd>
+
+    </dl>
+    
+</body>
+</html>

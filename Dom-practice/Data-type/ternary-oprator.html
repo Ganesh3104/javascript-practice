@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function check(){
+            var showImg = document.getElementById("showImg");
+            var imgPoster = document.getElementById("imgPoster");
+             var lblName = document.getElementById("lblName");
+
+            imgPoster.className = (showImg.checked)? "d-block": "d-none";
+            lblName.innerHTML = (lblName.innerHTML === "show")? "Hide":"show";
+
+        }
+    </script>
+
+</head>
+<body>
+    <h2>check</h2>
+    <input type="checkbox" id="showImg" onchange="check()">
+    <label for="" id="lblName">show</label>
+    <div id="imgPoster" class="d-none">
+        <img src="../image2.png" alt="" class="w-200" height="300">
+    </div>
+</body>
+</html>

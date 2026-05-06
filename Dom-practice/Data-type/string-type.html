@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show(){
+            let str = "welcome to javaScript";
+            let msg = str.fontsize(4).fontcolor('red').bold().italics(); 
+            document.querySelector("#str").innerHTML = msg;
+        }
+    </script>
+</head>
+<body>
+    <h1 id="str"></h1>
+    <button onclick="show()">Show</button>
+</body>
+</html>

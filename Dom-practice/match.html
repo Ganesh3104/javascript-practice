@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function verifyPassword(){
+            let password = document.getElementById("txtPassword").value;
+            let progessbar = document.getElementById("progressbar");
+            let regExp = /(?=.*[A-Z])\w{4,15}/;
+
+            if(password.match(regExp)){
+                lblPass.
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Password</dt>
+        <dd><input type="text" id="txtPassword" onkeyup="verifyPassword()"></dd>
+        <dd id="progress">
+            <div id="prgressbar">
+                <span id="lblPass"></span>
+            </div>
+        </dd>
+        <dt>Mobile Number</dt>
+        <dd><input type="text" id="txtMobile" onkeyup="verifyMobile()"></dd>
+        <dd id="lblMobile"></dd>
+    </dl>
+</body>
+</html>

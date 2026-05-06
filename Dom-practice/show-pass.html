@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Show Password</title>
+
+<script>
+function togglePassword() {
+    let pass = document.getElementById("pass");
+
+    if(pass.type === "password") {
+        pass.type = "text";   // show password
+    } else {
+        pass.type = "password"; // hide password
+    }
+}
+</script>
+</head>
+
+<body>
+<h2>Password Toggle</h2>
+
+<input type="password" id="pass" placeholder="Enter Password">
+<br><br>
+<input type="checkbox" onclick="togglePassword()"> Show Password
+</body>
+</html>

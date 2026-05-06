@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show(){
+            let x = document.getElementById("name").value;
+        document.getElementById("out").innerHTML = x;
+        document.getElementById("out").style.color = "green";
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="name">
+    <button onclick="show()">Submit</button>
+    <p id="out"></p>
+</body>
+</html>

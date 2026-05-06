@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Document</title>
+
+    <script>
+        function disablebtn(){
+            let username = document.getElementById("txtName").value;
+            let lblName = document.getElementById("lblName");
+            let btnSubmit = document.getElementById("btnSubmit");
+
+            if(username.length == 0){
+                lblName.innerHTML = "username required".fontcolor('red');
+                btnSubmit.disabled = true; 
+            }else{
+                lblName.innerHTML = "";
+                btnSubmit.disabled = false;
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <dl class=" mt-4 w-25">
+        <dt>User name</dt>
+        <dd><input type="text" id="txtName" class="form-control" onkeyup="disablebtn()"></dd>
+        <dd id="lblName"></dd>
+    </dl>
+     <button id="btnSubmit" disabled class="btn btn-success">Submit</button>
+</body>
+</html>

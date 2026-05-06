@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Document</title>
+    <script>
+        function verifyPassword(){
+            var password = document.getElementById("txtPassword").value;
+            var progressBar = document.getElementById("progressBar");
+            var regExp =/(?=.*[A-Z])\w{4,15}/;
+
+            if(password.match(regExp)){
+                lblpass.innerHTML = "strong password";
+                progressBar.style.width = "100%";
+                progressBar.className = "bg-success text-white progress-bar progress-bar-animated progress-bar-striped";
+
+            }else{
+             if(password.length<4){
+                lblpass.innerHTML = "poor password";
+                progressBar.style.width = "30%";
+                progressBar.className = "bg-danger text-white progress-bar progress-bar-animated progress-bar-striped";
+
+            }else{
+                lblpass.innerHTML = "weak password";
+                progressBar.style.width = "70%";
+                 progressBar.className = "bg-warning text-white progress-bar progress-bar-animated progress-bar-striped";
+
+            }
+        }
+    }
+
+        function verifyMobile(){
+            var mobile = document.getElementById("txtMobile").value;
+            var lblmobile = document.getElementById("lblMobile");
+            var regExp = /\+91\d{10}/;
+
+            if(mobile.match(regExp)){
+                lblmobile.innerHTML = "";
+            }else{
+                lblmobile.innerHTML = "Invalid mobile +91 & 10 digit required".fontcolor('red');
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl class="w-25">
+        <dt>Password</dt>
+        <dd>
+            <input type="text" id="txtPassword" class="form-control" onkeyup="verifyPassword()">
+        </dd>
+        <dd id="progress">
+             <div id="progressBar">
+                 <span id="lblpass"></span>
+             </div>
+        </dd>
+        <dt class="pt-4">Mobile</dt>
+        <dd><input type="text" id="txtMobile" class="form-control" onblur="verifyMobile()"></dd>
+        <dd id="lblMobile"></dd>
+    </dl>
+</body>
+</html>

@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function searchClick(){
+            result = prompt("Enter Search String", "ex: Mobile, TV Watches");
+            if(result === null){
+                alert("You canceled Search");
+            }else if(result === ""){
+                alert("Please Provide a Search string \n it can't be empty");
+
+            }else{
+                document.write(`You are Searching for: ${result}`);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="searchClick()">Search</button>
+</body>
+</html>

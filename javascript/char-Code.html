@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function VerifyName(){
+            var userName = document.getElementById("txtName").value;
+            var lblName = document.getElementById("lblName");
+
+            if(userName.charCodeAt(0)>=65 && userName.charCodeAt(0)<=90){
+                lblName.innerHTML = "";
+            }else{
+                lblName.innerHTML = "Name Must Start with uppercase letter".fontcolor('red');
+            }
+        } 
+    </script>
+</head>
+<body>
+   <dl>
+    <dt>Username</dt>
+    <dd><input type="text" id="txtName" onblur="VerifyName()"></dd>
+    <dd id="lblName"></dd>
+   </dl>
+</body>
+</html>

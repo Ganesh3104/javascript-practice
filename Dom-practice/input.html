@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function login(){
+            let u = document.getElementById("user").value;
+            let p = document.getElementById("pass").value;
+            let msg = document.getElementById("msg");
+
+            if(u == "" || p == ""){
+                msg.innerHTML = "All fields are required";
+                msg.style.color = "red";
+            }else if(p.length < 6){
+                msg.innerHTML = "Password must greater than 6 letter";
+                msg.style.color = "red";
+            }else{
+                msg.innerHTML = "Login Successfully";
+                msg.style.color = "green";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Login</h2>
+     <input type="text" id="user" placeholder="Enter Username"><br><br>
+     <input type="password" id="pass" placeholder="Enter password"><br><br>
+    
+     <button onclick="login()">submit</button>
+
+     <p id="msg"></p>
+
+</body>
+</html>

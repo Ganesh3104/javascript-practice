@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function bodyload(){
+         frmLogin.btnLogin.value = "Login";
+         frmRegister.btnRegister.value = "Register";
+    }
+</script>
+<body onload="bodyload()">
+     <div>
+        <form name="frmLogin">
+            <h3>User Login</h3>
+            <input type="text" name="txtName" placeholder="User Name">
+            <input type="password" name="txtPwd" placeholder="Password">
+            <input type="button" name="btnLogin">
+        </form>
+    </div>
+
+    <div>
+        <form name="frmRegister">
+            <h3>User Register</h3>
+            <input type="text" name="txtName" placeholder="User Name">
+            <input type="password" name="txtPwd" placeholder="Password">
+            <input type="button" name="btnRegister">
+        </form>
+    </div>
+</body>
+</html>

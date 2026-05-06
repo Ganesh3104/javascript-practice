@@ -1,0 +1,22 @@
+<script>
+
+    let arr = [10, 20, 40, 30];
+
+let large = arr[0];
+let seclarge = arr[0];
+
+for(let i = 0; i < arr.length; i++){
+    if(arr[i] > large){
+        large = arr[i];
+    }
+}
+
+for (let i = 0; i < arr.length; i++){
+    if(arr[i] != large){
+        if(seclarge == large || arr[i] > seclarge){
+            seclarge = arr[i];
+        }
+    }
+}
+console.log("Second largest number:", seclarge);
+</script>

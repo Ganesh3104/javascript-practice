@@ -1,0 +1,17 @@
+<script>
+    function common(arr){
+  let r = [];
+  for(let i = 0; i < arr.length; i++){
+    for(let j = i + 1; j < arr.length; j++){
+      if(arr[i] == arr[j]){
+        r[r.length] = arr[i];
+        break;
+      }
+    }
+  }
+  return r;
+}
+
+console.log(common([1,2,1,2,3]));
+
+</script>

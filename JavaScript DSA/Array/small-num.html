@@ -1,0 +1,15 @@
+<script>
+    function smallnum(arr){
+        let small = arr[0];
+
+        for(let i = 0; i < arr.length; i++){
+            if(arr[i] < small){
+                small = arr[i];
+            }
+        }
+        return small;
+    }
+
+    let num = [10, 20, 5, 40, 30];
+    console.log(smallnum(num));
+</script>

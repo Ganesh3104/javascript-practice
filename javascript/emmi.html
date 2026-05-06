@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+     <script src="./emmi.js"></script>
+</head>
+<body class="container-fluid bg-secondary">
+    
+    <div class="bg-light text-dark p-4 m-4">
+        <div class="h4 text-center">Personal Loan EMI Calculator</div>
+        <div class="my-4 row">
+            <div class="col">
+                Amount you need &#8377; <input type="text" onchange="txtAmountChange()" id="txtAmount" size="16">
+            </div>
+            <div class="col">
+                 for <input onchange="txtYearsChange()" type="text" id="txtYears" size="2"> Years
+            </div>
+
+            <div class="col">
+                  Interest rate <input type="text"  onchange="txtRateChange()" id="txtRate" size="2"> %
+            </div>
+
+        </div>
+
+        <div class="my-4 row">
+            <div class="col">
+                <input type="range" step="10000"   onchange="handleAmountChange()" class="form-range" id="rangeAmount" min="100000" max="1000000" value="100000">
+                <div>
+                    <span>&#8377; 1,00,000</span>
+                    <span class="float-end">&#8377; 10,00,000</span>
+                </div>
+            </div>
+
+             <div class="col">
+                <input type="range"  onchange="handleYearChange()" class="form-range" id="rangeYears" min="1" max="5" value="1">
+                <div>
+                    <span>1 year</span>
+                    <span class="float-end">5 year</span>
+                </div>
+            </div>
+
+             <div class="col">
+                <input type="range"  onchange="handleRateChange()" class="form-range" id="rangeRate" min="10.45" max="18.45" value="10.45" step="0.1">
+                 <div>
+                    <span>10.45%</span>
+                    <span class="float-end">18.45%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class=" col text-end">
+                <button class="btn btn-primary" onclick="CalculateClick()">Calculate</button>
+            </div>
+        </div>
+
+         <div class="row my-4 text-center">
+            <span id="lblResult"></span>
+        </div>
+
+    </div>
+</body>
+</html>

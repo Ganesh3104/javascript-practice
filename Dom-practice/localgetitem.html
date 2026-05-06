@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function submit(){
+            let name = document.getElementById("name").value;
+            let email =  document.getElementById("email").value;
+
+            if(name == "" || email == ""){
+                alert("All fields required");
+            }else{
+                localStorage.setItem("username", name);
+                localStorage.setItem("useremail", email);
+                alert("data stored successfully");
+            }
+        }
+            
+        // read stored data
+        document.write("Name: " + localStorage.getItem("username"));
+        document.write("<br>Email: " + localStorage.getItem("useremail"));
+    </script>
+</head>
+<body>
+    <input type="text" id="name"><br><br>
+    <input type="text" id="email">
+    <button onclick="submit()">Submit</button>
+</body>
+</html>

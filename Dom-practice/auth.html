@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body{
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+        }
+        .box{
+            background: white;
+            width: 300px;
+            padding: 20px;
+            margin: 50px auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        input{
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+        button{
+            padding: 10px;
+            width: 100%;
+            background-color:#4CAF50;
+            border: none;
+            color: white;
+        }
+        p{
+            font-size: 16px;
+        }
+        a{
+            color: blue;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function showLogin(){
+            document.getElementById("login").style.display = "block";
+            document.getElementById("register").style.display = "none";
+        }
+
+        function showRegister(){
+            document.getElementById("register").style.display = "block";
+            document.getElementById("login").style.display = "none";
+        }
+
+        function togglePass(id){
+            let x = document.getElementById(id);
+            x.type = (x.type === "password") ? "text" : "password";
+        }
+
+        function register(){
+            let n = document.getElementById("rname").value;
+            let e = document.getElementById("remail").value;
+            let p = document.getElementById("rpass").value;
+            let cp = document.getElementById("rcpass").value;
+            let msg = document.getElementById("rmsg");
+            let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if(n == "" || e == "" || p == "" || cp == ""){
+                msg.innerHTML = "All fields required";
+                msg.style.color = "red";
+            }else if(!pattern.test(e)){
+                msg.innerHTML = "Invalid Email";
+                msg.style.color = "red";
+            }else if(p.length < 6){
+                msg.innerHTML = "password must be greater than 6 letter";
+                msg.style.color = "red";
+            }else if(p != cp){
+                msg.innerHTML = "password and confirm password not match";
+                msg.style.color = "red";
+            }else{
+                msg.innerHTML = "Register Successfully";
+                msg.style.color = "green";
+            }
+        }
+
+        function login(){
+            let e = document.getElementById("lemail").value;
+            let p = document.getElementById("lpass").value;
+            let msg = document.getElementById("lmsg")
+            let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if(e == "" || p == ""){
+                msg.innerHTML = "All fields are required";
+                msg.style.color ="red";
+            }else{
+                msg.innerHTML = "Login Successfully";
+                msg.style.color = "green";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box" id="login">
+        <h2>Login</h2>
+        <input type="email" id="lemail" placeholder="Enter your email">
+        <input type="password" id="lpass" placeholder="Enter your password">
+        <input type="checkbox" onclick="togglePass('lpass')"> Show password
+        <button onclick="login()">Login</button>
+        <p id="lmsg"></p>
+        <p>New User? <a onclick="showRegister()">Register</a></p>
+
+    </div>
+
+
+    <div class="box" id="register" style="display:none">
+       <h2>Register</h2>
+       <input type="text" id="rname" placeholder="Name">
+       <input type="email" id="remail" placeholder="Email">
+       <input type="password" id="rpass" placeholder="Password">
+       <input type="password" id="rcpass" placeholder="Confirm Password">
+       <input type="checkbox" onclick="togglePass('rpass')"> Show Password
+       <button onclick="register()">Register</button>
+       <p id="rmsg"></p>
+       <p>Already have an account? <a onclick="showLogin()">Login</a></p>
+    </div>
+</body>
+</html>

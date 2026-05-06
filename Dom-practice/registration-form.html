@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function register(){
+            let u = document.getElementById("name").value;
+            let p = document.getElementById("pass").value;
+            let e = document.getElementById("email").value;
+            let cp = document.getElementById("cpass").value;
+            let msg = document.getElementById("msg");
+
+            if(u == "" || p == "" || e == "" || cp == ""){
+                msg.innerHTML = "All fields required";
+                msg.style.color = "red";
+            }else if(p.length < 6){
+                msg.innerHTML = "password must greater then 6 letter";
+                msg.style.color = "red";
+            }else if(p != cp){
+                msg.innerHTML = "password and confirm password not match";
+                msg.style.color = "red";
+            }else{
+                msg.innerHTML = "Register Successfully";
+                msg.style.color = "green";
+            }
+        }
+    </script>
+</head>
+<body>
+    
+        <input type="text" id="name" placeholder="Enter your name"><br><br>
+        <input type="email" id="email" placeholder="Enter your email"><br><br>
+        <input type="password" id="pass" placeholder="Enter your password"><br><br>
+        <input type="password" id="cpass" placeholder="confirm password"><br><br>
+        <p id="msg"></p>
+
+        <button onclick="register()">Register</button>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Number Formatting</title>
+</head>
+
+<body>
+
+<h3 id="out"></h3>
+<button onclick="show()">Show Result</button>
+
+<script>
+function show(){
+    let num = 123.4567;
+
+    let fixed = num.toFixed(2);
+    let precision = num.toPrecision(4);
+
+    document.getElementById("out").innerHTML =
+        "Original: " + num + "<br>" +
+        "toFixed(2): " + fixed + "<br>" +
+        "toPrecision(4): " + precision;
+}
+</script>
+
+</body>
+</html>

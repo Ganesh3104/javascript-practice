@@ -1,0 +1,57 @@
+
+<script>
+    var price = 4500000;
+   price.toLocaleString("en-in");
+    document.write(price.toLocaleString("en-in"));
+</script>
+<br>
+
+
+<script>
+    var num = 45000000;
+    rate = num.toLocaleString('en-in', {style:"currency", currency:'INR'});
+    document.write(rate);
+</script>
+
+<br>
+
+<script>
+    var percent = 0.789;
+    document.write(percent.toLocaleString('en-in', {style:'percent'}));
+</script>
+<br>
+
+<script>
+    var speed = 110;
+    document.write(speed.toLocaleString('en-in', {style:"unit", unit:"kilometer-per-hour"}));
+</script>
+
+<br>
+
+<script>
+    var likes = 10000000;
+    document.write(likes.toLocaleString('en-us', {notation:"compact"}));
+</script>
+<br>
+<script>
+    var post = 1000000000;
+    posts = post.toLocaleString('en-in', {notation:"standard"});
+    document.write(posts);
+</script>
+
+<br>
+
+<script>
+    var data = 2000;
+    document.write(data.toLocaleString('en-us', {style:"currency", currency:"USD"}));
+
+</script>
+<br><br><br>
+
+<script>
+       var  x = 4500.341;
+       document.writeln(x.toFixed() + "<br>"); 
+      document.writeln(x.toFixed(2) + "<br>");           // 4500.34
+      document.writeln(x.toPrecision(5) + "<br>");        // 4500.4
+      document.writeln(x.toFixed(0) + "<br>");            // 4500
+</script>
