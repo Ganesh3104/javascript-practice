@@ -2,13 +2,22 @@
 
 function longestWord(str){
 
-    let arr = str.split(" ");
+    let word = "";
     let longest = "";
 
-    for(let i = 0; i < arr.length; i++){
+    for(let i = 0; i <= str.length; i++){
 
-        if(arr[i].length > longest.length){
-            longest = arr[i];
+        if(str[i] !== " " && i !== str.length){
+
+            word += str[i];
+
+        }else{
+
+            if(word.length > longest.length){
+                longest = word;
+            }
+
+            word = "";
         }
     }
 
