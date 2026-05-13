@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 
 function checkAnagram(str1, str2){
 
@@ -24,4 +24,33 @@ function checkAnagram(str1, str2){
 
 console.log(checkAnagram("listen", "silent"));
 
+</script> -->
+
+
+
+
+
+
+
+
+<script>
+    let arr = [12, 32, 16, 80, 30];
+    let large = arr[0];
+    let seclarge = arr[0];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > large) {
+            large = arr[i];
+        }
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== large) {
+            if (seclarge == large || arr[i] > seclarge) {
+                seclarge = arr[i]
+            }
+        }
+    }
+    console.log(large);
+    console.log(seclarge);
 </script>
