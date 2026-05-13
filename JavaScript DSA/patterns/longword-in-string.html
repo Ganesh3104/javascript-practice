@@ -1,50 +1,29 @@
-<!-- <script>
-
-function longestWord(str){
-
-    let word = "";
-    let longest = "";
-
-    for(let i = 0; i <= str.length; i++){
-
-        if(str[i] !== " " && i !== str.length){
-
-            word += str[i];
-
-        }else{
-
-            if(word.length > longest.length){
-                longest = word;
-            }
-
-            word = "";
-        }
-    }
-
-    return longest;
-}
-
-console.log(longestWord("I love javascript programming"));
-
-</script> -->
-
-
 <script>
-    function checkLongest(str) {
+
+    function longestWord(str) {
+
         let word = "";
         let longest = "";
 
         for (let i = 0; i <= str.length; i++) {
+
             if (str[i] !== " " && i !== str.length) {
+
                 word += str[i];
+
             } else {
+
                 if (word.length > longest.length) {
                     longest = word;
                 }
-                word = " ";
+
+                word = "";
             }
         }
+
         return longest;
     }
-    console.log(checkLongest("what is mysql database"));
+
+    console.log(longestWord("I love javascript programming"));
+
 </script>

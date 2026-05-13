@@ -1,0 +1,28 @@
+<script>
+
+    function flatten(arr) {
+
+        let result = [];
+
+        function check(item) {
+
+            for (let i = 0; i < item.length; i++) {
+
+                if (Array.isArray(item[i])) {
+                    check(item[i]);
+                } else {
+                    result.push(item[i]);
+                }
+            }
+        }
+
+        check(arr);
+
+        return result;
+    }
+
+    let arr = [1, [2, 3], [4, [5]]];
+
+    console.log(flatten(arr));
+
+</script>

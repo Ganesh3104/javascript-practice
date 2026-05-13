@@ -1,0 +1,14 @@
+<script>
+
+    function reverseTriangle(n) {
+        for (let i = n; i >= 1; i--) {
+            let row = "";
+
+            for (let j = 1; j <= i; j++) {
+                row += "* ";
+            }
+            document.write(row + "<br>");
+        }
+    }
+    reverseTriangle(5);
+</script>
