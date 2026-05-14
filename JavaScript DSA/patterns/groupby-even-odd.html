@@ -1,0 +1,25 @@
+<script>
+    function groupbyevenodd(arr){
+
+        let result = {
+            even : [],
+            odd : []
+        }
+
+        let e = 0;
+        let o = 0;
+
+        for(let i = 0; i < arr.length; i++){
+
+            if(arr[i] % 2 === 0){
+                result.even[e] = arr[i];
+                e++;
+            }else{
+                result.odd[o] = arr[i];
+                o++;
+            }
+        }
+        return result;
+    }
+    console.log(groupbyevenodd([1,2,3,4,5,6,7]))
+</script>
