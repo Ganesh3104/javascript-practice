@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notes App</title>
+</head>
+<body>
+
+  <h2>Notes App</h2>
+
+  <input type="text" id="noteInput" placeholder="Enter note">
+  <button onclick="addNote()">Add</button>
+
+  <ul id="noteList"></ul>
+
+  <script>
+
+    let notes = JSON.parse(localStorage.getItem("notes")) || [];
+
+    showNotes();
+
+    function addNote(){
+
+      let input = document.getElementById("noteInput");
+      let note = input.value;
+
+      
+      
+      if(input.value === ""){
+        alert("please enter note");
+        return;
+      }
+
+      notes.push(note);
+
+      localStorage.setItem("notes", JSON.stringify(notes));
+
+      input.value = "";
+
+      showNotes();
+    }
+
+    function showNotes(){
+
+      let list = document.getElementById("noteList");
+      list.innerHTML = "";
+
+      for(let i = 0; i < notes.length; i++){
+
+        let li = document.createElement("li");
+        li.innerText = notes[i];
+
+        let btn = document.createElement("button");
+        btn.innerText = "Delete";
+
+        btn.onclick = function(){
+          deleteNote(i);
+        };
+
+        li.appendChild(btn);
+
+        list.appendChild(li);
+      }
+    }
+
+    function deleteNote(index){
+
+      notes.splice(index, 1);
+
+      localStorage.setItem("notes", JSON.stringify(notes));
+
+      showNotes();
+    }
+
+  </script>
+
+</body>
+</html>
