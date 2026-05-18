@@ -1,17 +1,26 @@
 <script>
-    function common(arr){
-  let r = [];
+ function common(arr){
+  let result = [];
+
   for(let i = 0; i < arr.length; i++){
-    for(let j = i + 1; j < arr.length; j++){
-      if(arr[i] == arr[j]){
-        r[r.length] = arr[i];
+    let exists = false;
+
+    for(let k = 0; k < result.length; k++){
+      if(result[k] === arr[i]){
+        exists = true;
         break;
       }
     }
+    if(!exists){
+      for(let j = i + 1; j < arr.length; j++){
+        if(arr[i] === arr[j]){
+          result[result.length] = arr[i];
+          break;
+        }
+      }
+    }
   }
-  return r;
-}
-
-console.log(common([1,2,1,2,3]));
-
+  return result;
+ }
+ console.log(common([1,1,1,2,2,2,3,3,3,4,4,5]))
 </script>
