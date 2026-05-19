@@ -1,0 +1,15 @@
+<script>
+    function removeFalsy(arr){
+    let result = [];
+
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i]){
+            result[result.length] = arr[i];
+        }
+    }
+
+    return result;
+}
+
+console.log(removeFalsy([0, "hi", false, 5, "", null]));
+</script>
