@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather App</title>
+</head>
+<body>
+
+  <h2>Weather App</h2>
+
+  <input type="text" id="cityInput" placeholder="Enter city">
+  <button onclick="showWeather()">Search</button>
+
+  <div id="result"></div>
+
+  <script>
+
+    let weatherData = [
+      {city:"Hyderabad", temp:"32°C", condition:"Sunny"},
+      {city:"Pune", temp:"28°C", condition:"Cloudy"},
+      {city:"Mumbai", temp:"30°C", condition:"Rainy"}
+    ];
+
+    function showWeather(){
+
+      let city = document.getElementById("cityInput").value;
+      let result = document.getElementById("result");
+
+      for(let i = 0; i < weatherData.length; i++){
+
+        if(weatherData[i].city.toLowerCase() === city.toLowerCase()){
+
+          result.innerHTML =
+          "<h3>" + weatherData[i].city + "</h3>" +
+          "<p>Temp: " + weatherData[i].temp + "</p>" +
+          "<p>Condition: " + weatherData[i].condition + "</p>";
+
+          return;
+        }
+      }
+
+      result.innerHTML = "City not found";
+    }
+
+  </script>
+
+</body>
+</html>
