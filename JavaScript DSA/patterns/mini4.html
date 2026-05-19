@@ -14,33 +14,28 @@
 
   <script>
 
-    let weatherData = [
-      {city:"Hyderabad", temp:"32°C", condition:"Sunny"},
-      {city:"Pune", temp:"28°C", condition:"Cloudy"},
-      {city:"Mumbai", temp:"30°C", condition:"Rainy"}
-    ];
+  let whether = [
+    {city: "Nanded", temp: "32 c", condition: "Sunney"},
+    {city: "Hyderabad", temp: "37 c", condition: "Sunney"},
+    {city: "Pune", temp: "30 c", condition: "Rainey"}
+  ];
 
-    function showWeather(){
+  function showWeather(){
+    let city = document.getElementById("cityInput").value;
+    let result = document.getElementById("result");
 
-      let city = document.getElementById("cityInput").value;
-      let result = document.getElementById("result");
+    for(let i = 0; i < whether.length; i++){
+        if(whether[i].city.toLowerCase() === city.toLowerCase()){
+           result.innerHTML = 
+           "<h3>" + whether[i].city + "</h3>" +
+           "<p>Temp: " + whether[i].temp + "</p>" +
+            "<p>Condition: " + whether[i].condition + "</p>"
 
-      for(let i = 0; i < weatherData.length; i++){
-
-        if(weatherData[i].city.toLowerCase() === city.toLowerCase()){
-
-          result.innerHTML =
-          "<h3>" + weatherData[i].city + "</h3>" +
-          "<p>Temp: " + weatherData[i].temp + "</p>" +
-          "<p>Condition: " + weatherData[i].condition + "</p>";
-
-          return;
+            return;
         }
-      }
-
-      result.innerHTML = "City not found";
     }
-
+    result.innerHTML = "City not found";
+  }
   </script>
 
 </body>
