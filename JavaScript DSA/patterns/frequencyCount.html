@@ -1,14 +1,18 @@
 <script>
-    let arr = [1, 2, 2, 3, 3, 3];
-    let freq = {};
+    function countfreq(str){
+        freq = {};
 
-    for (let i = 0; i < arr.length; i++) {
-        if (freq[arr[i]]) {
-            freq[arr[i]]++;
-
-        } else {
-            freq[arr[i]] = 1;
+        for(let i = 0; i < str.length; i++){
+            if(str[i] === " "){
+                continue;
+            }
+           else if(freq[str[i]]){
+                freq[str[i]]++;
+            }else{
+                freq[str[i]] = 1;
+            }
         }
+        return freq;
     }
-    console.log(freq);
+    console.log(countfreq("javaScript is my fav"));
 </script>
