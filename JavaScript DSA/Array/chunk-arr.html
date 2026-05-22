@@ -1,0 +1,19 @@
+<script>
+
+function chunk(arr, size){
+
+    let result = [];
+    let k = 0;
+
+    for(let i = 0; i < arr.length; i += size){
+
+        result[k] = [arr[i], arr[i+1]];
+        k++;
+    }
+
+    return result;
+}
+
+console.log(chunk([1,2,3,4,5,6], 2));
+
+</script>

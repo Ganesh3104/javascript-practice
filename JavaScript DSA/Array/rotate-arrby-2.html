@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
     
 function rotate(arr){
 
@@ -15,4 +15,21 @@ function rotate(arr){
 
 rotate([1,2,3,4,5]);
 
+</script> -->
+
+
+
+<script>
+    function rotate(str){
+        let result = [];
+        let k = 4;
+
+        for(let i = 0; i < str.length; i++){
+            result[(i + k) % str.length] = str[i];
+        }
+
+        console.log(result.join(""));
+    }
+
+    rotate("Inst__ae");
 </script>
