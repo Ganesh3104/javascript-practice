@@ -1,0 +1,16 @@
+<script>
+  function checkPrime(num){
+    if(num <= 1){
+        return "Not Prime";
+    }
+
+    for(let i = 2; i < num; i++){
+        if(num % i === 0){
+            return "not prime";
+        }
+    }
+    return "prime";
+  }
+  console.log(checkPrime(7))
+        
+</script>

@@ -1,33 +1,6 @@
-<!-- <script>
-    function miss(str){
-        let result = "";
-
-        if(str[0] !== "a"){
-            result += "a";
-        }
-
-        for(let i = 0; i < str.length; i++){
-            let prev = str.charCodeAt(i - 1);
-            let curr = str.charCodeAt(i);
-
-            for(let j = prev + 1; j < curr; j++){
-                result += String.fromCharCode(j)
-            }
-        }
-        return result;
-    }
-    console.log(miss("bcdg"))
-</script> -->
-
-
-
 <script>
     function miss(str){
         result = [];
-
-        if(str[0] !== "a"){
-            result += "a";
-        }
 
         for(let i = 0; i < str.length; i++){
             let prev = str.charCodeAt(i - 1);
