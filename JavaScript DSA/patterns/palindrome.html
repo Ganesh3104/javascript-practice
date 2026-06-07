@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
     let str = "maam";
     let isPalindrome = true;
 
@@ -9,4 +9,17 @@
         }
     }
     console.log(isPalindrome ? "Palindrome" : "Not Palindrme");
+</script> -->
+
+
+<script>
+    function isPalindrome(str){
+        for(let i = 0; i < str.length/2; i++){
+            if(str[i] !== str[str.length - 1 - i]){
+                return "not Palindrome";
+            }
+        }
+        return "palindrome"
+    }
+    console.log(isPalindrome("maa"));
 </script>
