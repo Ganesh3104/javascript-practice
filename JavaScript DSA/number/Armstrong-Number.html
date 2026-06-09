@@ -1,0 +1,26 @@
+<script>
+
+function armstrong(num){
+
+    let temp = num;
+    let sum = 0;
+
+    while(num > 0){
+
+        let digit = num % 10;
+
+        sum += digit * digit * digit;
+
+        num = parseInt(num / 10);
+    }
+
+    if(sum === temp){
+        return "Armstrong Number";
+    }else{
+        return "Not Armstrong Number";
+    }
+}
+
+console.log(armstrong(153));
+
+</script>
