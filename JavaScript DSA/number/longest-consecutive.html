@@ -1,0 +1,40 @@
+<script>
+
+function longest(arr){
+
+    let max = 0;
+
+    for(let i = 0; i < arr.length; i++){
+
+        let num = arr[i];
+        let count = 1;
+
+        while(true){
+
+            let found = false;
+
+            for(let j = 0; j < arr.length; j++){
+
+                if(arr[j] === num + 1){
+                    found = true;
+                    num++;
+                    count++;
+                }
+            }
+
+            if(found === false){
+                break;
+            }
+        }
+
+        if(count > max){
+            max = count;
+        }
+    }
+
+    return max;
+}
+
+console.log(longest([100,4,200,1,3,2]));
+
+</script>
