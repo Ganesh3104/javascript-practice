@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Products</title>
+    <script>
+        function bodyload(){
+            fetch("https://fakestoreapi.com/products")
+            .then(function(response){
+                return response.json();
+            })
+
+            .then(function(products){
+                products.map(function(product){
+                    let div = document.createElement("div");
+
+                    div.style.cssText = `
+                        height: 250px;
+                        width: 200px;
+                        border: 1px solid black;
+                        border-radius: 10px;
+                        margin: 10px;
+                        padding: 10px;
+                        display: inline-block;
+                    `;
+
+                    div.innerHTML = `
+                        <div>
+                            <img src="${product.image}" width="100px" height="100px">
+                        </div>
+                        <div>${product.title}</div>
+                        <div>$${product.price}</div>
+                    `;
+
+                    document.getElementById("container").appendChild(div);
+                });
+            });
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div id="container"></div>
+</body>
+</html>
