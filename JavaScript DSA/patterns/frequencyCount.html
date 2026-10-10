@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
     function countfreq(str){
         freq = {};
 
@@ -15,4 +15,29 @@
         return freq;
     }
     console.log(countfreq("javaScript is my fav"));
+</script> -->
+
+
+
+
+
+
+
+
+
+
+<script>
+    function countfreq(str){
+        let freq = {};
+
+        for(let i = 0; i < str.length; i++){
+            if(freq[str[i]]){
+                freq[str[i]]++;
+            }else{
+                freq[str[i]] = 1;
+            }
+        }
+        return freq;
+    }
+    console.log(countfreq("Hello JavaScript"));
 </script>
